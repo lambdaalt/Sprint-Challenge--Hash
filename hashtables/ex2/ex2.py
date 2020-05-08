@@ -18,6 +18,9 @@ def reconstruct_trip(tickets, length):
     while curr_source != 'NONE':
         route.append(curr_source)
         curr_source = ht[curr_source]
+        # print(curr_source)
     route.append(curr_source)
-
+    
+    # print(curr_source)
+    # print(route)
     return route

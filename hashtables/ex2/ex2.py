@@ -6,9 +6,18 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    
-    """
-    YOUR CODE HERE
-    """
+    ht = {} # dict instead of hashtable
+    route = []
+
+    for i in range(length):
+        ht[tickets[i].source] = tickets[i].destination
+        i = i+1
+
+    curr_source = ht['NONE']
+
+    while curr_source != 'NONE':
+        route.append(curr_source)
+        curr_source = ht[curr_source]
+    route.append(curr_source)
 
     return route
